@@ -1,19 +1,19 @@
-import { FaHome } from "react-icons/fa";
+import { HiHome, HiCode, HiPencilAlt } from "react-icons/hi";
 
 export const menus = [
     {
         title: "Home",
-        icon: <FaHome />,
+        icon: <HiHome />,
         link: "/",
     },
     {
         title: "Create Entity",
-        icon: <FaHome />,
+        icon: <HiCode />,
         link: "/entity",
     },
     {
         title: "Create Uuid",
-        icon: <FaHome />,
+        icon: <HiPencilAlt />,
         link: "/uuid",
     },
     // {
