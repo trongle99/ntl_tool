@@ -73,7 +73,7 @@ const UuidPage = () => {
 
                 <textarea
                     name=""
-                    cols="40"
+                    cols="45"
                     rows="10"
                     value={uuid}
                     className="border rounded p-3"
