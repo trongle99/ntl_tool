@@ -10,6 +10,9 @@ module.exports = {
         'sidebar': '#474849',
         'sidebar-hover': '#5a5a5c',
       },
+      fontFamily: {
+        'Impact': ['Impact, Charcoal, sans-serif'],
+      }
     },
   },
   plugins: [],

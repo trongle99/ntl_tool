@@ -1,4 +1,4 @@
-import { HiHome, HiCode, HiPencilAlt } from "react-icons/hi";
+import { HiHome, HiCode, HiPencilAlt, HiPuzzle } from "react-icons/hi";
 
 export const menus = [
     {
@@ -15,6 +15,11 @@ export const menus = [
         title: "Create Uuid",
         icon: <HiPencilAlt />,
         link: "/uuid",
+    },
+    {
+        title: "Vòng quay",
+        icon: <HiPuzzle />,
+        link: "/spin",
     },
     // {
     //     title: "Create Form",

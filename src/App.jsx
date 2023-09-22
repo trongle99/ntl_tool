@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import EntityPage from "./pages/EntityPage";
 import FormPage from "./pages/FormPage";
 import UuidPage from "./pages/UuidPage";
+import SpinPage from "./pages/SpinPage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/entity" element={<EntityPage />} />
                     <Route path="/uuid" element={<UuidPage />} />
+                    <Route path="/spin" element={<SpinPage />} />
                     <Route path="/form" element={<FormPage />} />
                     <Route path="/about" element={<AboutPage />} />
                 </Routes>

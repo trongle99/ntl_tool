@@ -72,7 +72,6 @@ const UuidPage = () => {
                 </div>
 
                 <textarea
-                    name=""
                     cols="45"
                     rows="10"
                     value={uuid}
