@@ -11,7 +11,7 @@ const HomePage = () => {
         setDeviceInfo(result);
 
         // alert(result);
-        //1
+        //12
     }, []);
 
     const [ipAddress, setIpAddress] = useState(null);
