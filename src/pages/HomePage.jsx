@@ -11,6 +11,7 @@ const HomePage = () => {
         setDeviceInfo(result);
 
         // alert(result);
+        //1
     }, []);
 
     const [ipAddress, setIpAddress] = useState(null);
