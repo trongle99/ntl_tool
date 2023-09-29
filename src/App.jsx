@@ -12,51 +12,6 @@ import UuidPage from './pages/UuidPage';
 import SpinPage from './pages/SpinPage';
 
 function App() {
-    fetch('https://api.ipify.org/?format=json')
-        .then((response) => response.json())
-        .then((data) => {
-            var ipAddress = data.ip;
-            console.log('Địa chỉ IP: ' + ipAddress);
-        })
-        .catch((error) => {
-            console.log('Lỗi khi lấy địa chỉ IP: ' + error);
-        });
-
-    // Sử dụng WebRTC để lấy địa chỉ IP trong mạng
-    function getLocalIPAddress(callback) {
-        var RTCPeerConnection =
-            window.RTCPeerConnection ||
-            window.mozRTCPeerConnection ||
-            window.webkitRTCPeerConnection;
-        var rtc = new RTCPeerConnection({ iceServers: [] });
-        var addrs = {};
-
-        rtc.onicecandidate = function (evt) {
-            if (evt.candidate) {
-                var addr = evt.candidate.address;
-                if (!addrs[addr]) {
-                    addrs[addr] = true;
-                    callback(addr);
-                }
-            }
-        };
-
-        rtc.createDataChannel('');
-        rtc.createOffer(
-            function (offerDesc) {
-                rtc.setLocalDescription(offerDesc);
-            },
-            function (err) {
-                console.error(err);
-            },
-        );
-    }
-
-    // Gọi hàm để lấy địa chỉ IP
-    getLocalIPAddress(function (ipAddress) {
-        console.log('Địa chỉ IP trong mạng: ' + ipAddress);
-    });
-
     return (
         <BrowserRouter>
             <div className="h-screen flex">
