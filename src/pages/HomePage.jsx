@@ -5,6 +5,18 @@ const HomePage = () => {
     const [ipAddress, setIpAddress] = useState(null);
     const [ipLocalAddress, setIPLocalAddress] = useState('');
 
+    const [userAgent, setUserAgent] = useState('');
+    const [screenWidth, setScreenWidth] = useState(0);
+    const [screenHeight, setScreenHeight] = useState(0);
+    const [platform, setPlatform] = useState('');
+
+    useEffect(() => {
+        setUserAgent(navigator.userAgent);
+        setScreenWidth(window.screen.width);
+        setScreenHeight(window.screen.height);
+        setPlatform(navigator.platform);
+    }, []);
+
     function getLocalIP() {
         return new Promise(function (resolve, reject) {
             // NOTE: window.RTCPeerConnection is "not a constructor" in FF22/23
@@ -66,6 +78,7 @@ const HomePage = () => {
             );
         });
     }
+
     useEffect(() => {
         getLocalIP().then((ipAddr) => {
             setIPLocalAddress(ipAddr);
@@ -90,6 +103,12 @@ const HomePage = () => {
                 <br />
                 <h1>Địa chỉ IP của bạn là: {ipAddress}</h1>
                 <p>Your IP Local Address is: {ipLocalAddress}</p>
+                <div>
+                    <p>User Agent: {userAgent}</p>
+                    <p>Screen Width: {screenWidth}</p>
+                    <p>Screen Height: {screenHeight}</p>
+                    <p>Platform: {platform}</p>
+                </div>
             </div>
         </MainContent>
     );
