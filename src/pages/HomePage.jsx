@@ -100,15 +100,14 @@ const HomePage = () => {
         <MainContent title={'Home page'}>
             <div className="flex justify-center">
                 <p className="text-6xl">WELCOME TO NTL TOOL</p>
-                <br />
-                <h1>Địa chỉ IP của bạn là: {ipAddress}</h1>
+            </div>
+            <div>
+                <p>Địa chỉ IP của bạn là: {ipAddress}</p>
                 <p>Your IP Local Address is: {ipLocalAddress}</p>
-                <div>
-                    <p>User Agent: {userAgent}</p>
-                    <p>Screen Width: {screenWidth}</p>
-                    <p>Screen Height: {screenHeight}</p>
-                    <p>Platform: {platform}</p>
-                </div>
+                <p>User Agent: {userAgent}</p>
+                <p>Screen Width: {screenWidth}</p>
+                <p>Screen Height: {screenHeight}</p>
+                <p>Platform: {platform}</p>
             </div>
         </MainContent>
     );
