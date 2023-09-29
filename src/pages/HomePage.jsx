@@ -9,6 +9,8 @@ const HomePage = () => {
         const parser = new UAParser();
         const result = parser.getResult();
         setDeviceInfo(result);
+
+        // alert(result);
     }, []);
 
     const [ipAddress, setIpAddress] = useState(null);
@@ -110,16 +112,17 @@ const HomePage = () => {
             <div className="flex justify-center">
                 <p className="text-6xl">WELCOME TO NTL TOOL</p>
             </div>
-            <div>
+            {/* <div>
                 <p>Địa chỉ IP của bạn là: {ipAddress}</p>
                 <p>Your IP Local Address is: {ipLocalAddress}</p>
                 <p>User Agent: {userAgent}</p>
                 <p>Screen Width: {screenWidth}</p>
                 <p>Screen Height: {screenHeight}</p>
                 <p>Platform: {platform}</p>
-            </div>
+            </div> */}
             {deviceInfo && (
                 <React.Fragment>
+                    {JSON.stringify(deviceInfo)}
                     <p>User Agent: {deviceInfo.ua}</p>
                     <p>Device: {deviceInfo.device.model}</p>
                     <p>Operating System: {deviceInfo.os.name}</p>
