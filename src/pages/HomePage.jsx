@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import MainContent from './../components/MainContent';
+import UAParser from 'ua-parser-js';
 
 const HomePage = () => {
+    const [deviceInfo, setDeviceInfo] = useState(null);
+
+    useEffect(() => {
+        const parser = new UAParser();
+        const result = parser.getResult();
+        setDeviceInfo(result);
+    }, []);
+
     const [ipAddress, setIpAddress] = useState(null);
     const [ipLocalAddress, setIPLocalAddress] = useState('');
 
@@ -109,6 +118,14 @@ const HomePage = () => {
                 <p>Screen Height: {screenHeight}</p>
                 <p>Platform: {platform}</p>
             </div>
+            {deviceInfo && (
+                <React.Fragment>
+                    <p>User Agent: {deviceInfo.ua}</p>
+                    <p>Device: {deviceInfo.device.model}</p>
+                    <p>Operating System: {deviceInfo.os.name}</p>
+                    <p>Browser: {deviceInfo.browser.name}</p>
+                </React.Fragment>
+            )}
         </MainContent>
     );
 };
