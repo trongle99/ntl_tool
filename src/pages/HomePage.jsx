@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MainContent from './../components/MainContent';
-import UAParser from 'ua-parser-js';
+import { UAParser } from 'ua-parser-js';
 
 const HomePage = () => {
     const [deviceInfo, setDeviceInfo] = useState(null);
@@ -8,6 +8,7 @@ const HomePage = () => {
     useEffect(() => {
         const parser = new UAParser();
         const result = parser.getResult();
+        // console.log('result:', result);
         setDeviceInfo(result);
 
         // alert(result);
