@@ -8,27 +8,11 @@ const HomePage = () => {
     useEffect(() => {
         const parser = new UAParser();
         const result = parser.getResult();
-        // console.log('result:', result);
         setDeviceInfo(result);
-
-        // alert(result);
-        //12
     }, []);
 
     const [ipAddress, setIpAddress] = useState(null);
     const [ipLocalAddress, setIPLocalAddress] = useState('');
-
-    const [userAgent, setUserAgent] = useState('');
-    const [screenWidth, setScreenWidth] = useState(0);
-    const [screenHeight, setScreenHeight] = useState(0);
-    const [platform, setPlatform] = useState('');
-
-    useEffect(() => {
-        setUserAgent(navigator.userAgent);
-        setScreenWidth(window.screen.width);
-        setScreenHeight(window.screen.height);
-        setPlatform(navigator.platform);
-    }, []);
 
     function getLocalIP() {
         return new Promise(function (resolve, reject) {
@@ -96,9 +80,7 @@ const HomePage = () => {
         getLocalIP().then((ipAddr) => {
             setIPLocalAddress(ipAddr);
         });
-    }, []);
 
-    useEffect(() => {
         fetch('https://api.ipify.org/?format=json')
             .then((response) => response.json())
             .then((data) => {
@@ -114,17 +96,12 @@ const HomePage = () => {
             <div className="flex justify-center">
                 <p className="text-6xl">WELCOME TO NTL TOOL</p>
             </div>
-            {/* <div>
+            <div>
                 <p>Địa chỉ IP của bạn là: {ipAddress}</p>
                 <p>Your IP Local Address is: {ipLocalAddress}</p>
-                <p>User Agent: {userAgent}</p>
-                <p>Screen Width: {screenWidth}</p>
-                <p>Screen Height: {screenHeight}</p>
-                <p>Platform: {platform}</p>
-            </div> */}
+            </div>
             {deviceInfo && (
                 <React.Fragment>
-                    {JSON.stringify(deviceInfo)}
                     <p>User Agent: {deviceInfo.ua}</p>
                     <p>Device: {deviceInfo.device.model}</p>
                     <p>Operating System: {deviceInfo.os.name}</p>
