@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
-    "@types/ua-parser-js": "^0.7.36",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
